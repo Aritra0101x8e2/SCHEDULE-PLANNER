@@ -139,38 +139,39 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-pink-50">
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-soft border-b border-primary/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <EditableText
-              text={data.appName}
-              onSave={updateAppName}
-              className="text-xl sm:text-2xl font-cursive font-bold text-primary"
-              inputClassName="text-xl sm:text-2xl font-cursive font-bold text-primary bg-white/80"
-              placeholder="Enter app name..."
-              maxLength={50}
-            />
-            <div className="flex flex-wrap gap-2">
-              <Button
-                onClick={() => setCurrentPage('calendar')}
-                variant="outline"
-                className="flex items-center gap-2 w-full sm:w-auto"
-              >
-                <Calendar size={18} />
-                Calendar
-              </Button>
-              <Button
-                onClick={() => setCurrentPage('notes')}
-                variant="outline"
-                className="flex items-center gap-2 w-full sm:w-auto"
-              >
-                <FileText size={18} />
-                Add Notes
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
+     <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-soft border-b border-primary/10">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+    <div className="flex flex-wrap items-center justify-between gap-2">
+      <EditableText
+        text={data.appName}
+        onSave={updateAppName}
+        className="text-xl sm:text-2xl font-cursive font-bold text-primary"
+        inputClassName="text-xl sm:text-2xl font-cursive font-bold text-primary bg-white/80"
+        placeholder="Enter app name..."
+        maxLength={50}
+      />
+      <div className="flex flex-wrap gap-2 w-full justify-center sm:justify-end">
+        <Button
+          onClick={() => setCurrentPage('calendar')}
+          variant="outline"
+          className="flex items-center gap-2 w-full sm:w-auto"
+        >
+          <Calendar size={18} />
+          Calendar
+        </Button>
+        <Button
+          onClick={() => setCurrentPage('notes')}
+          variant="outline"
+          className="flex items-center gap-2 w-full sm:w-auto"
+        >
+          <FileText size={18} />
+          Add Notes
+        </Button>
+      </div>
+    </div>
+  </div>
+</header>
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6">
         {/* Live Clock */}
