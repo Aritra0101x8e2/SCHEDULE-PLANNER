@@ -59,7 +59,7 @@ const Index = () => {
       confetti.style.animationDelay = Math.random() * 3 + 's';
       confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
       document.body.appendChild(confetti);
-      
+
       setTimeout(() => {
         confetti.remove();
       }, 3000);
@@ -140,21 +140,21 @@ const Index = () => {
     <div className="min-h-screen bg-pink-50">
       {/* Header */}
       <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-soft border-b border-primary/10">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
             <EditableText
               text={data.appName}
               onSave={updateAppName}
-              className="text-2xl font-cursive font-bold text-primary"
-              inputClassName="text-2xl font-cursive font-bold text-primary bg-white/80"
+              className="text-xl sm:text-2xl font-cursive font-bold text-primary"
+              inputClassName="text-xl sm:text-2xl font-cursive font-bold text-primary bg-white/80"
               placeholder="Enter app name..."
               maxLength={50}
             />
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap gap-2">
               <Button
                 onClick={() => setCurrentPage('calendar')}
                 variant="outline"
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 w-full sm:w-auto"
               >
                 <Calendar size={18} />
                 Calendar
@@ -162,7 +162,7 @@ const Index = () => {
               <Button
                 onClick={() => setCurrentPage('notes')}
                 variant="outline"
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 w-full sm:w-auto"
               >
                 <FileText size={18} />
                 Add Notes
@@ -172,15 +172,15 @@ const Index = () => {
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-6 py-8 space-y-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6">
         {/* Live Clock */}
         <LiveClock />
 
         {/* Motivational Quote */}
-        <div className="bg-white/90 backdrop-blur-soft rounded-2xl p-6 shadow-soft border border-primary/10 text-center">
-          <div className="flex items-center justify-center gap-2 mb-2">
+        <div className="bg-white/90 backdrop-blur-soft rounded-2xl p-4 sm:p-6 shadow-soft border border-primary/10 text-center">
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-2">
             <Star className="text-primary" size={20} />
-            <h3 className="text-lg font-cursive font-bold text-primary">
+            <h3 className="text-base sm:text-lg font-cursive font-bold text-primary">
               Daily Motivation
             </h3>
             <Star className="text-primary" size={20} />
@@ -199,7 +199,7 @@ const Index = () => {
         <AddSlotForm onAddSlot={handleAddSlot} />
 
         {/* Weekday Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 overflow-x-auto">
           {weekdays.map((day) => (
             <WeekdayCard
               key={day}
